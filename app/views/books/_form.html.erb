@@ -1,0 +1,72 @@
+<%= form_with(model: book, local: true) do |form| %>
+  <% if book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+      <% book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :isbn %>
+    <%= form.text_field :isbn, id: :book_isbn %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :book_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :author %>
+    <%= form.text_field :author, id: :book_author %>
+  </div>
+
+  <div class="field">
+    <%= form.label :publisher %>
+    <%= form.text_field :publisher, id: :book_publisher %>
+  </div>
+
+  <div class="field">
+    <%= form.label :publication_date %>
+    <%= form.date_select :publication_date, id: :book_publication_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :format %>
+    <%= form.text_field :format, id: :book_format %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location %>
+    <%= form.text_field :location, id: :book_location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :note %>
+    <%= form.text_area :note, id: :book_note %>
+  </div>
+
+  <div class="field">
+    <%= form.label :collectible %>
+    <%= form.check_box :collectible, id: :book_collectible %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price, id: :book_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :genre_id %>
+    <%= form.number_field :genre_id, id: :book_genre_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

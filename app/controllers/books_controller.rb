@@ -1,6 +1,8 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
+  include ApplicationHelper
+
   # GET /books
   # GET /books.json
   def index
@@ -15,10 +17,12 @@ class BooksController < ApplicationController
   # GET /books/new
   def new
     @book = Book.new
+    @genres = Genre.all
   end
 
   # GET /books/1/edit
   def edit
+    @genres = Genre.all
   end
 
   # POST /books
@@ -69,6 +73,6 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:isbn, :title, :author, :publisher, :publication_date, :format, :location, :note, :collectible, :price, :genre_id)
+      params.require(:book).permit(:isbn, :title, :author, :publisher, :publication_date, :format, :location, :note, :collectible, :price, :genre_id, :image)
     end
 end

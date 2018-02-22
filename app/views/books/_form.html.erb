@@ -12,8 +12,9 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :isbn %>
+    <%= form.label :isbn, "ISBN" %> 
     <%= form.text_field :isbn, id: :book_isbn %>
+    <p class="form-text">Either 10 or 13 digits; for 9 digit SBNs, simply add a 0 to the front.</p>
   </div>
 
   <div class="field">
@@ -23,7 +24,7 @@
 
   <div class="field">
     <%= form.label :author %>
-    <%= form.text_field :author, id: :book_author %>
+    <%= form.text_field :author, id: :book_author, placeholder: "Last Name, First Name" %>
   </div>
 
   <div class="field">
@@ -56,15 +57,22 @@
     <%= form.check_box :collectible, id: :book_collectible %>
   </div>
 
+  <div class="form-group">
+    <%= form.select :genre_id, genre_finder, {include_blank: "" } %>
+  </div>
+  <%= link_to "Add or Remove a Genre", genres_path %>
+
+  <div class="form-group">
+    <strong>Upload Book Image: </strong>
+    <%= form.file_field :image %>
+  </div>
+
   <div class="field">
     <%= form.label :price %>
     <%= form.text_field :price, id: :book_price %>
   </div>
 
-  <div class="field">
-    <%= form.label :genre_id %>
-    <%= form.number_field :genre_id, id: :book_genre_id %>
-  </div>
+
 
   <div class="actions">
     <%= form.submit %>

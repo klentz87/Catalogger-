@@ -42,7 +42,7 @@
 
 <p>
   <strong>Collectible:</strong>
-  <%= @book.collectible %>
+  <%= @book.collectible ? "Yes" : "No"%>
 </p>
 
 <p>
@@ -52,7 +52,7 @@
 
 <p>
   <strong>Genre:</strong>
-  <%= @book.genre_id %>
+  <%= genre_display_on_show_page %>
 </p>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |

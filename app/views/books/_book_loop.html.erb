@@ -1,0 +1,71 @@
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Author</th>
+      <th>Title</th>
+      <th>Publisher</th>
+      <th>Year</th>
+      <th>Format</th>
+      <th>Location</th>
+      <th>Price</th>
+      <th>Genre</th>
+      <th>Note</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <div class="modal fade" id="myModal_<%= book.id %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+              </div>
+              <div class="modal-body">
+                <% if book.image.url.nil? == false %>
+                  <p><%= image_tag book.image.url, class: "book-pics" %></p>
+                <% end %>
+                <h3><%= link_to book.title, book %></h3>
+                <p><%= book.author %></p>
+                <p><%= book.publisher %> <%= book.publication_date.year %></p>
+                <p><%= link_to genre_display_on_index_page(book), {:controller => "books", :action => "books_by_genre", :genre_id => book.genre_id} %> <%= book.format %></p>
+
+
+
+                <p><strong>Located:</strong><%= book.location %></p>
+                <p><strong>Note:</strong></p>
+                <p><%= book.note %></p>
+                <p><%= number_to_currency book.price %></p>
+                <p>book.genre_id<%= book.genre_id %></p>
+              </div>
+              <div class="modal-footer">
+                <p>
+          <!-- empty for now -->
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <td><a href="" data-toggle="modal" data-target="#myModal_<%= book.id %>" > More Info</a></td>
+        <td><%= book.author %></td>
+        <td><%= book.title %></td>
+        <td><%= book.publisher %></td>
+        <td><%= book.publication_date.year %></td>
+        <td><%= book.format %></td>
+        <td><%= book.location %></td>
+        <td><%= book.price %></td>
+        <td><%= genre_display_on_index_page(book) %>
+        <td><%= book.note %></td>
+        <td><%= link_to 'Edit', edit_book_path(book) %></td>
+        <td><%= link_to 'Delete', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Book', new_book_path %>

@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
-
+  
   include ApplicationHelper
 
   # GET /books
@@ -8,6 +8,18 @@ class BooksController < ApplicationController
   def index
     @books = Book.all
   end
+
+  def books_by_genre
+    @books = Book.where(genre_id: params[:genre_id])
+    @genre = Genre.find(params[:genre_id])
+  end
+
+  def books_by_title
+    books = Book.all
+    @books = books.order(title: :asc)
+    
+  end
+
 
   # GET /books/1
   # GET /books/1.json

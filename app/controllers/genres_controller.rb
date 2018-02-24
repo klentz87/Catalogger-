@@ -1,6 +1,6 @@
 class GenresController < ApplicationController
   before_action :set_genre, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /genres
   # GET /genres.json
   def index
@@ -19,6 +19,12 @@ class GenresController < ApplicationController
 
   # GET /genres/1/edit
   def edit
+  end
+
+  def books_by_genre
+    @books = Book.where(genre_id: params[:genre_id])
+    @genre = Genre.find(params[:genre_id])
+    
   end
 
   # POST /genres

@@ -6,11 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-genres = Genre.create([{name: nil}, {name: ""}, {name: "Art"}, {name: "Nostalgia"}, {name: "Metaphysics"}, 
+genres = Genre.create([{name: "Art"}, {name: "Nostalgia"}, {name: "New Age"}, 
   {name: "Home Repair"}, {name: "Arts/Crafts"}, {name: "Gardening"},
   {name: "Cooking"}, {name: "Health"}, {name: "Religion"}, {name: "Philosophy"},
   {name: "Kids"}, {name: "Young Adult"}, {name: "Sociology"}, {name: "Political Science"},
-  {name: "World History"}, {name: "U.S. History"}, {name: "Sports"}, {name: "Transportation"},
+  {name: "History"}, {name: "Sports"}, {name: "Transportation"},
   {name: "Science"}, {name: "Computer Science"}, {name: "Business"}, {name: "Performing Arts"},
   {name: "Graphic Novels"}, {name: "Manga"}, {name: "Humor"}, {name: "Travel"}, {name: "Regional"},
   {name: "Self-Help/Psychology"}, {name: "Psychology"}, {name: "Parenting"}, {name: "Mystery"}, {name: "Romance"},

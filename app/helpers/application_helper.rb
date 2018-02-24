@@ -16,12 +16,13 @@ module ApplicationHelper
         end
     end
 
-    def genre_display_on_index_page
+    def genre_display_on_index_page(book)
     	if Genre.find_by(id: book.genre_id)
     		Genre.find_by(id: book.genre_id).name
     	else
     		nil
     	end
+
     end
 
 

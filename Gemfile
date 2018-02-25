@@ -33,6 +33,9 @@ gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'jquery-rails'
 gem 'carrierwave'
+gem 'figaro'
+gem 'httparty'
+gem 'googlebooks', '~> 0.0.9'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

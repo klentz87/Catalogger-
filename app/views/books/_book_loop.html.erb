@@ -30,16 +30,13 @@
                 <% end %>
                 <h3><%= link_to book.title, book %></h3>
                 <p><%= book.author %></p>
-                <p><%= book.publisher %> <%= book.publication_date.year %></p>
-                <p><%= link_to genre_display_on_index_page(book), {:controller => "books", :action => "books_by_genre", :genre_id => book.genre_id} %> <%= book.format %></p>
-
-
-
+                <p><%= book.publisher %> <%= book.publication_date %></p>
+                <p><%= link_to genre_display_on_index_page(book), generical_path(genre_id: book.genre_id) %> <%= book.format %></p>
+                
                 <p><strong>Located:</strong><%= book.location %></p>
                 <p><strong>Note:</strong></p>
                 <p><%= book.note %></p>
                 <p><%= number_to_currency book.price %></p>
-                <p>book.genre_id<%= book.genre_id %></p>
               </div>
               <div class="modal-footer">
                 <p>
@@ -53,7 +50,7 @@
         <td><%= book.author %></td>
         <td><%= book.title %></td>
         <td><%= book.publisher %></td>
-        <td><%= book.publication_date.year %></td>
+        <td><%= book.publication_date %></td>
         <td><%= book.format %></td>
         <td><%= book.location %></td>
         <td><%= book.price %></td>

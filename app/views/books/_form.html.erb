@@ -11,70 +11,78 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :isbn, "ISBN" %> 
-    <%= form.text_field :isbn, id: :book_isbn %>
-    <p class="form-text">Either 10 or 13 digits; for 9 digit SBNs, simply add a 0 to the front.</p>
-  </div>
+<div class="container">
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :book_title %>
-  </div>
+  
+    <div class="form-group">
+      <%= form.label :isbn, "ISBN" %>
+      <%= form.text_field :isbn, id: :book_isbn, placeholder: "Either 10 or 13 digits. For 9 digit SBNs, just add a 0 to the front", class: "form-control top-three" %>
+    </div>
+  
+    
+    <div class="form-group">
+      <%= form.label :title %>
+      <%= form.text_field :title, id: :book_title, placeholder: "Enter the title", class: "form-control top-three"%>
+    </div>
 
-  <div class="field">
-    <%= form.label :author %>
-    <%= form.text_field :author, id: :book_author, placeholder: "Last Name, First Name" %>
-  </div>
+    <div class="form-group">
+      <%= form.label :author %>
+      <%= form.text_field :author, id: :book_author, placeholder: "Enter the Author's name (Last Name, First Name)", class: "form-control top-three" %>
+    </div>
+    
 
-  <div class="field">
-    <%= form.label :publisher %>
-    <%= form.text_field :publisher, id: :book_publisher %>
-  </div>
+  <row class="publisher-field">
+    <div class="form-group">
+      <%= form.label :publisher %>
+      <%= form.text_field :publisher, id: :book_publisher, placeholder: "Enter the publisher", class: "form-control" %>
+    </div>
 
-  <div class="field">
-    <%= form.label :publication_date %>
-    <%= form.date_select :publication_date, id: :book_publication_date %>
-  </div>
+    <div class="form-group">
+      <%= form.label :publication_date %>
+      <%= form.text_field :publication_date, id: :book_publication_date, discard_day: :true, discard_month: :true, class: "form-control" %>
+    </div>
+  </row>
+  
 
-  <div class="field">
-    <%= form.label :format %>
-    <%= form.text_field :format, id: :book_format %>
-  </div>
+    <div class="field">
+      <%= form.label :format %>
+      <%= form.text_field :format, id: :book_format %>
+    </div>
 
-  <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location, id: :book_location %>
-  </div>
+    <div class="field">
+      <%= form.label :location %>
+      <%= form.text_field :location, id: :book_location %>
+    </div>
 
-  <div class="field">
-    <%= form.label :note %>
-    <%= form.text_area :note, id: :book_note %>
-  </div>
+    <div class="field">
+      <%= form.label :note %>
+      <%= form.text_area :note, id: :book_note %>
+    </div>
 
-  <div class="field">
-    <%= form.label :collectible %>
-    <%= form.check_box :collectible, id: :book_collectible %>
-  </div>
+    <div class="field">
+      <%= form.label :collectible %>
+      <%= form.check_box :collectible, id: :book_collectible %>
+    </div>
 
-  <div class="form-group">
-    <%= form.select :genre_id, genre_finder, {include_blank: "" } %>
-  </div>
-  <%= link_to "Add or Remove a Genre", genres_path %>
+    <div class="form-group">
+      <%= form.select :genre_id, genre_finder, {include_blank: "" } %>
+    </div>
+    <%= link_to "Add or Remove a Genre", genres_path %>
 
-  <div class="form-group">
-    <strong>Upload Book Image: </strong>
-    <%= form.file_field :image %>
-  </div>
+    <div class="form-group">
+      <strong>Upload Book Image: </strong>
+      <%= form.file_field :image %>
+    </div>
 
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price, id: :book_price %>
-  </div>
+    <div class="field">
+      <%= form.label :price %>
+      <%= form.text_field :price, id: :book_price %>
+    </div>
 
 
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+</div>

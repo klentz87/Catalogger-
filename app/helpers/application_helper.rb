@@ -20,7 +20,7 @@ module ApplicationHelper
     	if Genre.find_by(id: book.genre_id)
     		Genre.find_by(id: book.genre_id).name
     	else
-    		nil
+    		"" #figure a solution for this later
     	end
 
     end

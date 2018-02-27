@@ -4,6 +4,10 @@ class Book < ApplicationRecord
 
 	belongs_to :genre, optional: true
 
+	has_many :book_tags
+	has_many :tags, through: :book_tags
+
+
 #	private
 #
 #	def isbn_length

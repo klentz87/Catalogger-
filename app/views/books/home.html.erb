@@ -1,12 +1,10 @@
+<h1>BOOKFINDER</h1>
 
-<h1>BOOK FINDER</h1>
 
-<body>
-	<input id="search" placeholder="Title or Author">
-	<button id="button" type="button">Click Me</button>
-	<div id="results"></div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    <script src="assets/javascripts/application.js"></script>
-</body>
-
+    <h3>ENTER AN ISBN</h3>
+    
+    <%= form_tag new_path do %>
+	<%= text_field_tag :isbn, nil, placeholder: "ISBN" %><br />
+        <%= submit_tag "Submit Book" %>
+    <% end %>
+</div>

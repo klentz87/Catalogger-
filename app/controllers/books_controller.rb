@@ -1,6 +1,9 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
   
+  require 'googlebooks'
+
+
   include ApplicationHelper
 
   # GET /books
@@ -23,6 +26,10 @@ class BooksController < ApplicationController
   def home
   end
 
+  def create_book
+
+  end
+
 
   # GET /books/1
   # GET /books/1.json
@@ -33,6 +40,10 @@ class BooksController < ApplicationController
   def new
     @book = Book.new
     @genres = Genre.all
+
+    books = GoogleBooks.search(params[:isbn])
+    @first_book = books.first
+
   end
 
   # GET /books/1/edit

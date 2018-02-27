@@ -16,30 +16,29 @@
   
     <div class="form-group">
       <%= form.label :isbn, "ISBN" %>
-      <%= form.text_field :isbn, id: :book_isbn, placeholder: "Either 10 or 13 digits. For 9 digit SBNs, just add a 0 to the front", class: "form-control top-three" %>
+      <%= form.text_field :isbn, id: :book_isbn, :value => google_isbn, placeholder: "Either 10 or 13 digits. For 9 digit SBNs, just add a 0 to the front", class: "form-control top-three" %>
     </div>
-  
-    
+
     <div class="form-group">
       <%= form.label :title %>
-      <%= form.text_field :title, id: :book_title, placeholder: "Enter the title", class: "form-control top-three"%>
+      <%= form.text_field :title, id: :book_title, :value => google_title, placeholder: "Enter the title", class: "form-control top-three"%>
     </div>
 
     <div class="form-group">
       <%= form.label :author %>
-      <%= form.text_field :author, id: :book_author, placeholder: "Enter the Author's name (Last Name, First Name)", class: "form-control top-three" %>
+      <%= form.text_field :author, id: :book_author, :value => google_authors, placeholder: "Enter the Author's name (Last Name, First Name)", class: "form-control top-three" %>
     </div>
     
 
   <row class="publisher-field">
     <div class="form-group">
       <%= form.label :publisher %>
-      <%= form.text_field :publisher, id: :book_publisher, placeholder: "Enter the publisher", class: "form-control" %>
+      <%= form.text_field :publisher, id: :book_publisher, :value => google_publisher, placeholder: "Enter the publisher", class: "form-control" %>
     </div>
 
     <div class="form-group">
-      <%= form.label :publication_date %>
-      <%= form.text_field :publication_date, id: :book_publication_date, discard_day: :true, discard_month: :true, class: "form-control" %>
+      <%= form.label :publication_date, "Year Published" %>
+      <%= form.text_field :publication_date, id: :book_publication_date, :value => google_year, discard_day: :true, discard_month: :true, class: "form-control" %>
     </div>
   </row>
   
@@ -78,7 +77,6 @@
       <%= form.label :price %>
       <%= form.text_field :price, id: :book_price %>
     </div>
-
 
 
     <div class="actions">

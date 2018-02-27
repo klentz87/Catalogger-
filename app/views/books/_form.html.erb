@@ -79,10 +79,13 @@
       <%= form.file_field :image %>
     </div>
 
+    
+    <% if false %> <!-- commented out below -->
     <div class="form-group">
       <%= form.label :tags, "Tags" %>
       <%= form.text_area :tags, id: :book_tags %>
     </div>
+    <% end %> <!-- commented out above -->
 
     <div class="field">
       <%= form.label :price %>

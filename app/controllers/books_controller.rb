@@ -39,7 +39,7 @@ class BooksController < ApplicationController
   # GET /books/new
   def new
     @book = Book.new
-    @genres = Genre.all
+    @genres = Genre.all.order(:name)
 
     books = GoogleBooks.search(params[:isbn])
     @first_book = books.first
@@ -48,7 +48,7 @@ class BooksController < ApplicationController
 
   # GET /books/1/edit
   def edit
-    @genres = Genre.all
+    @genres = Genre.all.order(:name)
   end
 
   # POST /books

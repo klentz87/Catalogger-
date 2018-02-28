@@ -19,6 +19,14 @@
 // HOME BAR //
 
 
+body {
+	background-color: rgb(143,237,255)
+}
+
+.genre-container {
+	background-color: white;
+}
+
 .bar_and_title {
 	margin-top: 200px;
 	width: 100%;
@@ -41,12 +49,15 @@
 
 
 #form-whole {
-	border: solid black 1px;
+//	border: solid black 1px;
 	width: 50em;
+	background-color: white;
+	box-shadow: 10px 10px 3px rgb(163,163,163)
 }
 
 .form-control {
-	background-color: rgb(255,255,255);
+	background-color: rgb(250,250,250);
+	border-color: rgb(166,166,166)
 }
 
 
@@ -213,4 +224,9 @@ table {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+
+.book-pics {
+	max-width: 500px;
+	max-height: 1000px;
 }

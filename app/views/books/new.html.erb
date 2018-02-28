@@ -1,6 +1,6 @@
 <% provide(:title, "Enter a New Book") %>
 
-<h1>New Book</h1>
+
 
 
 <%= form_with(model: @book, local: true) do |form| %>
@@ -18,6 +18,8 @@
 
 <div class="container" id="form-whole">
 
+    <h1>New Book</h1>
+    <br>
   
     <div class="form-group top-three">
       <%= form.label :isbn, "ISBN" %>
@@ -109,7 +111,7 @@
       <div class="image_form">
         <div class="form-group">
           <strong>Upload Book Image: </strong>
-          <%= form.file_field :image, class: "image" %>
+          <%= form.file_field :image, :value => google_image, class: "image" %>
         </div>    
       </div> <!-- image_form -->
 

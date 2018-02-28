@@ -20,7 +20,7 @@ module ApplicationHelper
     	if Genre.find_by(id: book.genre_id)
     		Genre.find_by(id: book.genre_id).name
     	else
-    		"" # FOR SOME REASON, NIL WILL JUST LIST THE PATH NAME
+    		"" # in the modal, nil will return the path
     	end
     end
 
@@ -66,6 +66,13 @@ module ApplicationHelper
         end
     end
 
+    def google_image
+        if @first_book
+            @first_book.image_link(:zoom => 2) # medium
+        else
+            nil
+        end
+    end
 
 
 end

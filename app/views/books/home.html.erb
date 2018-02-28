@@ -1,10 +1,17 @@
 <h1>BOOKFINDER</h1>
 
-
-    <h3>ENTER AN ISBN</h3>
-    
-    <%= form_tag new_path do %>
-	<%= text_field_tag :isbn, nil, placeholder: "ISBN" %><br />
-        <%= submit_tag "Submit Book" %>
-    <% end %>
+<div class="container">
+	
+	<div class="container front-page">
+	    
+	    <div class="bar_and_title">
+		    <h3 id="home_title">ENTER AN ISBN</h3>
+		    
+		    <%= form_tag new_path do %>
+			<%= text_field_tag :isbn, nil, placeholder: "ISBN", class: "form-control bar" %><br />
+		        <%= submit_tag "Submit Book", class: "first-button" %>
+		    <% end %>
+		</div>
+		    
+	</div>
 </div>

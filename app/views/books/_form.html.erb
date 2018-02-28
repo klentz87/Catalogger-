@@ -21,26 +21,26 @@
 
     <div class="form-group top-three">
       <%= form.label :title %>
-      <%= form.text_field :title, id: :book_title, :value => google_title, placeholder: "Enter the title", class: "form-control"%>
+      <%= form.text_field :title, id: :book_title, placeholder: "Enter the title", class: "form-control"%>
     </div>
 
     <div class="form-group top-three">
       <%= form.label :author %>
-      <%= form.text_field :author, id: :book_author, :value => google_authors, placeholder: "Enter the Author's name (Last Name, First Name)", class: "form-control" %>
+      <%= form.text_field :author, id: :book_author, placeholder: "Enter the Author's name (Last Name, First Name)", class: "form-control" %>
     </div>
     
 
 
 
     <div class="publisher-couple">
-      <div class="form-group" id="publisher">
+      <div class="form-group publisher">
         <%= form.label :publisher %>
-        <%= form.text_field :publisher, id: :book_publisher, :value => google_publisher, placeholder: "Enter the publisher", class: "form-control" %>
+        <%= form.text_field :publisher, id: :book_publisher, placeholder: "Enter the publisher", class: "form-control" %>
       </div>
 
-      <div class="form-group" id="date">
+      <div class="form-group date">
         <%= form.label :publication_date, "Year Published" %>
-        <%= form.text_field :publication_date, id: :book_publication_date, :value => google_year, discard_day: :true, discard_month: :true, placeholder: "Enter the publication year", class: "form-control" %>
+        <%= form.text_field :publication_date, id: :book_publication_date, discard_day: :true, discard_month: :true, placeholder: "Enter the publication year", class: "form-control" %>
       </div>
     </div>
   

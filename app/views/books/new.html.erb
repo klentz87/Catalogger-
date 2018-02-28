@@ -2,8 +2,134 @@
 
 <h1>New Book</h1>
 
-<%= render 'form', book: @book %>
 
+<%= form_with(model: @book, local: true) do |form| %>
+  <% if @book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="container" id="form-whole">
+
+  
+    <div class="form-group top-three">
+      <%= form.label :isbn, "ISBN" %>
+      <%= form.text_field :isbn, id: :book_isbn, :value => google_isbn, placeholder: "Either the ISBN. For 9 digit SBNs, just add a 0 to the front", class: "form-control" %>
+    </div>
+
+    <div class="form-group top-three">
+      <%= form.label :title %>
+      <%= form.text_field :title, id: :book_title, :value => google_title, placeholder: "Enter the title", class: "form-control"%>
+    </div>
+
+    <div class="form-group top-three">
+      <%= form.label :author %>
+      <%= form.text_field :author, id: :book_author, :value => google_authors, placeholder: "Enter the Author's name (Last Name, First Name)", class: "form-control" %>
+    </div>
+    
+
+
+
+    <div class="publisher-couple">
+      
+      <div class="form-group publisher">
+        <%= form.label :publisher %>
+        <%= form.text_field :publisher, id: :book_publisher, :value => google_publisher, placeholder: "Enter the publisher", class: "form-control" %>
+      </div>
+
+      <div class="form-group date">
+        <%= form.label :publication_date, "Year Published" %>
+        <%= form.text_field :publication_date, id: :book_publication_date, :value => google_year, discard_day: :true, discard_month: :true, placeholder: "Enter the publication year", class: "form-control" %>
+      </div>
+    </div>
+  
+    
+    <div class="genre_and_format">
+    
+      <div class="genre">
+        <%= form.label :genre %>
+        <%= form.select :genre_id, genre_finder, {include_blank: "Select Genre" }, class: "genre_dropbox" %>
+        <%= link_to "Remove or Add a Genre", genres_path, class: "genre_link" %>
+
+    
+      </div> <!-- genre_box -->
+
+
+      <div class="format">
+        <%= form.label :format %>
+        <%= form.select :format, options_for_select([["Select Format", ""], "Hardcover", "Trade Paperback", "Paperback", "Book Club", "Other"]), { id: :book_format }, {class: "format_dropbox" } %>
+      </div>
+    </div> <!-- genre_and_format -->
+
+    <div class="form-group note">
+      <%= form.label :note %>
+      <%= form.text_area :note, id: :book_note, placeholder: "Enter any notes on this item", class: "form-control" %>
+    </div>
+    
+
+    <div class="location_and_collectible">
+      <div class="form-group">
+        <%= form.label :location %>
+        <%= form.text_field :location, id: :book_location, placeholder: "Enter location in your collection", class: "form-control location" %>
+      </div>
+
+      <div class="collectible-side">
+        <div class="field">
+          <%= form.label :collectible, "Collectible" %>
+          <%= form.check_box :collectible, id: :book_collectible, class: "check_box" %>
+        </div>
+      </div> <!-- collectible side -->
+    </div>  <!-- location_and_collectible -->
+
+
+    <!-- COMMENTED OUT COMMENTED OUT COMMENTED OUT -->
+    <% if false %> <!-- commented out below -->
+    <div class="form-group">
+      <%= form.label :tags, "Tags" %>
+      <%= form.text_area :tags, id: :book_tags %>
+    </div>
+    <% end %> <!-- commented out above -->
+    <!-- COMMENTED OUT COMMENTED OUT COMMENTED OUT -->
+
+    <div class="bottom_row">
+      <div class="price_form">
+        <div class="form-group">
+          <%= form.label :price %>
+          <%= form.text_field :price, id: :book_price, class: "form-control price_field" %>
+        </div>
+      </div> <!-- price_form -->
+
+      <div class="image_form">
+        <div class="form-group">
+          <strong>Upload Book Image: </strong>
+          <%= form.file_field :image, class: "image" %>
+        </div>    
+      </div> <!-- image_form -->
+
+    </div>  <!-- bottom row -->
+
+
+
+
+
+  
+</div>
+
+<div class="container">
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+
+    <% end %>
+</div>
 
 
 <%= link_to 'Back', books_path %>

@@ -42,16 +42,13 @@
 
 #form-whole {
 	border: solid black 1px;
-	width: 70%;
+	width: 50em;
 }
 
 .form-control {
 	background-color: rgb(255,255,255);
 }
 
-.publisher-field .form-group {
-	display: inline-block;
-}
 
 .top-three {
 	width: 30em;
@@ -65,18 +62,24 @@
 
 }
 
-#publisher, #date {
-	width: 20em;
+ .publisher {
+	width: 20em;	
 	margin: 10px;
 	display: inline-block;
 }
 
+ .date {
+ 	width: 15em;
+ 	margin: 10px;
+ 	display: inline-block;
+ }	
 
 // Row Five
 
 .genre_and_format {
 	display: flex;
 	justify-content: center;
+	padding-left: 30px;
 }
 
 // Format field begin
@@ -85,11 +88,12 @@
 	width: 20em;
 	margin: 9px 15px 15px 15px;
 	display: inline-block;
+	padding-left: 20px;
 }
 
 .format_dropbox {
 	display: block;
-	width: 18em;
+	width: 16em;
 	height: 2em;
 }
 
@@ -105,12 +109,12 @@ label .format {
 	margin: 10px;
 	display: inline-block;
 	width: 20em;
-	padding-left: 4px; // the line up genre with the publisher field above //
+	padding-left: 24px; // the line up genre with the publisher field above //
 }
 
 .genre_dropbox {
 	display: block;	
-	width: 18em;
+	width: 16em;
 	height: 2em;
 }
 
@@ -185,16 +189,28 @@ label .genre {
 // INDEX TABLE //
 
 table {
-	width: 100%;
+	width: 1200px;
 }
 
 #author {
 	width: 150px;
+	padding-left: 2px; 
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#title {
+	width: 100px;
 	padding-left: 2px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 
 #publisher {
-	width: 120px;
+	width: 20%;
 	padding-left: 2px;
+	white-space: nowrap;
+	overflow: hidden;
 	text-overflow: ellipsis;
 }

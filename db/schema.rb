@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180227163543) do
+ActiveRecord::Schema.define(version: 20180301145831) do
 
   create_table "book_hashtags", force: :cascade do |t|
     t.integer "book_id"
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20180227163543) do
     t.string "title"
     t.string "author"
     t.string "publisher"
-    t.integer "publication_date"
     t.string "format"
     t.string "location"
     t.text "note"
@@ -35,6 +34,7 @@ ActiveRecord::Schema.define(version: 20180227163543) do
     t.datetime "updated_at", null: false
     t.string "image"
     t.text "tags"
+    t.integer "publication_date"
   end
 
   create_table "genres", force: :cascade do |t|
